@@ -1,9 +1,10 @@
 import React, {useState} from "react";
 import Project from "./Project";
 
-export default function ProjectList({projects, addProject, updateProject, deleteProject}){
-    const [newProject, setNewProject] = useState('');
-
+export default function ProjectList({projects, addProject, updateProject, deleteProject, addTask, updateTask, deleteTask}){
+    const [newProject, setNewProject] = useState(''); //Project list
+  
+    //Add New project
     const handleAddProject = () =>{
         
         if (newProject.trim()) {
@@ -28,6 +29,9 @@ export default function ProjectList({projects, addProject, updateProject, delete
             project={project} 
             updateProject={updateProject} 
             deleteProject={deleteProject}
+            addTask={addTask}
+            updateTask={updateTask}
+            deleteTask={deleteTask}
            
           />
         ))}

@@ -20,8 +20,26 @@ export default function ProjectManager(){
     };
 
     //Task actions
+    const addTask = (projectID, taskName) =>{
+        setProjects(projects.map(project => project.id === projectID ?
+            {...project, tasks: [...project.tasks, {id: Date.now(), name: taskName}]}:project));
+    };
 
+    const updateTask = (projectID, taskID, newTask) =>{
+        setProjects(projects.map(
+            project => project.id === projectID ? 
+            {...project, tasks: project.tasks.map(
+                task => task.id === taskID ?
+                {...task, name: newTask}: task)}: project));
+    };
 
+    const deleteTask = (projectID, taskID) =>{
+        setProjects(projects.map(project => project.id === projectID ?
+        {...project, tasks: project.tasks.filter(task => task.id !== taskID)}: project))
+    };
+    
+    
+   
     return(
         <div className="Project-Management">
             <h1>Project Management</h1>
@@ -30,6 +48,9 @@ export default function ProjectManager(){
                 addProject={addProject} 
                 updateProject={updateProject} 
                 deleteProject={deleteProject}
+                addTask={addTask}
+                updateTask={updateTask}
+                deleteTask={deleteTask}
             />
         </div>
         
