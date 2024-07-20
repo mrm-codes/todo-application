@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import Project from "./Project";
+import {FaTrash, FaPlusCircle, FaEdit} from 'react-icons/fa';
 
 export default function ProjectList({projects, addProject, updateProject, deleteProject, addTask, updateTask, deleteTask}){
     const [newProject, setNewProject] = useState(''); //Project list
@@ -21,7 +22,7 @@ export default function ProjectList({projects, addProject, updateProject, delete
                 onChange={(e) =>{setNewProject(e.target.value)}}
                 placeholder="New project name"
             />
-            <button onClick={handleAddProject}>Add project</button>
+            <button onClick={handleAddProject}><FaPlusCircle/> Project</button>
             <div>
             {projects.map(project => (
           <Project 

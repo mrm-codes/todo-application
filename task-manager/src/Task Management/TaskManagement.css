@@ -4,7 +4,106 @@
 @import url('https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&family=Cabin:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 .Project-Management{
-    background-color: #d7cddb;
+    background-color: #dfe9f0;
     padding: 0 1rem;
     font-family: "Cabin", "Andika","Nunito Sans", "Montserrat",   sans-serif;
+    width: 80%;
+}
+.Project-List{background-color: #d5dfdf;
+margin: 0rem 3rem;
+padding: 2rem 1rem .75rem 1rem;}
+
+.Project-List h2{
+    background-color: #002d40;
+    color: #eee;
+    padding: 1rem;
+    border-radius: .75rem;
+    font-size: 1.75rem;
+  
+}
+
+.Project-List input{
+    padding: .75rem .5rem;
+    width: 90%;
+    border-radius: .75rem;
+    outline: none;
+    border: none;
+    box-shadow: 0 2px 2px 0 #002d40;
+    font-size: 1rem;
+}
+
+.Project-List button{
+    margin: 0 .25rem;
+    padding: .75rem .5rem;
+    border: none; 
+    outline: none;
+    border-radius: .5rem;
+    background-color: #000000;
+    color: #eee;
+    box-sizing: 0 2px 3px 0 #002d40;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+
+.project-name, .task-list{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    background: none;
+    align-content: center;
+    justify-content: space-between;
+    
+}
+
+.project-name h2{
+    background: none;
+    color: #ff414d;
+    font-weight: 700;
+    font-size: 1.75rem;
+    margin: 0;
+    padding: 1rem 1rem .25rem .25rem;
+    width: auto;
+}
+
+div.btn button{
+    background:none;
+    color: #000000;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: .25rem;
+}
+
+
+
+.Task{
+    background-color: #fdf1f2c4;
+    
+}
+
+.task-list{
+   
+    padding: 1rem 0;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    background: none;
+    align-content: center;
+    justify-content: space-between;
+
+}
+
+.task-list li{
+    padding: 0 3.5rem 0 .5rem;
+    list-style:circle;
+    width: 50%;
+}
+.task-list .btn{
+    background: none;
+    color: #000000;
+    font-size: 1rem;
+    cursor: pointer;
 }

@@ -42,7 +42,7 @@ export default function ProjectManager(){
    
     return(
         <div className="Project-Management">
-            <h1>Project Management</h1>
+            
             <ProjectList
                 projects={projects} 
                 addProject={addProject} 

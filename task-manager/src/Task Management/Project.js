@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import Task from "./Tasks";
+import {FaTrash, FaPlusCircle, FaEdit} from 'react-icons/fa';
 
 export default function Project({project, updateProject, deleteProject, addTask, updateTask, deleteTask}){
 
@@ -28,14 +29,20 @@ export default function Project({project, updateProject, deleteProject, addTask,
                         value={editProject}
                         onChange={(e) => setEditProject(e.target.value)}
                     />
-                    <button onClick={handleUpdateProject}>Update Project</button>
+                    <button onClick={handleUpdateProject}><FaEdit/> Project</button>
                 </div>
                 ) : (
-                    <h3>{project.name}</h3>
+                    <div className="project-name">
+                        <h2>{project.name}</h2>
+                        <div className="btn">
+                            <button onClick={() => setIsEditing(!isEditing)}><FaEdit/>Edit</button>
+                            <button onClick={() => deleteProject(project.id)}><FaTrash/>Delete</button>
+                        </div>
+                    </div>
                 )
             }
-            <button onClick={() => setIsEditing(!isEditing)}>Edit</button>
-            <button onClick={() => deleteProject(project.id)}>Delete</button>
+            
+            
             <div>
                 <input 
                     type="text"
@@ -43,7 +50,7 @@ export default function Project({project, updateProject, deleteProject, addTask,
                     onChange={(e) => setNewTask(e.target.value)}
                     placeholder="Add task"
                 />
-                <button onClick={handleAddTask}>Add Task</button>
+                <button onClick={handleAddTask}><FaPlusCircle/> Task</button>
             </div>
             <div>
                 {project.tasks.map(task =>(
