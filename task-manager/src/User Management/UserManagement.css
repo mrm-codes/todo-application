@@ -1,0 +1,138 @@
+/*REGISTER*/
+.Register, .Login{
+    display: flex;
+    background-color: aquamarine;
+    align-items: center;
+    justify-content: center;
+}
+.RegisterForm, .signForm{
+    background-color: #c1e8ff;
+    width: 20rem;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    
+    text-align: left;
+    margin: 2rem;
+    box-shadow: 0 2px 3px 0 #000000;
+    border-radius: .5rem;
+    border: none;
+   
+}
+.RegisterForm h2, .signForm h2{
+    background-color: #021024 ;
+    color: #eee;
+    text-align: center;
+    padding: 1rem;
+    margin: 0;
+    box-shadow: 0 1px 0px 1px #e94808;
+    border-radius: .25rem;
+    border: none;;
+}
+
+
+.RegisterForm label, .signForm label{
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: left;
+    padding: .5rem 1rem .25rem 1rem;
+
+}
+
+.RegisterForm input, .signForm input{
+    padding: .75rem 1rem;
+    align-self: center;
+    width: 80%;
+    box-shadow: 0 2px 3px 0 #000000;
+    border-radius: .5rem;
+    border: none;
+    align-self: center;
+    font-size: 1rem;
+    outline: none;
+}
+
+/*
+
+.RegisterForm .usernameLabel span{
+    position: absolute;
+    top: 5.6%;
+    left: 57.4%;
+}
+
+.RegisterForm .passwordLabel span{
+    position: absolute;
+    top: 32.6%;
+    left: 57.4%;
+}
+
+.RegisterForm .confirmLabel span{
+    position: absolute;
+    top: 24.3%;
+    left: 57.4%;
+}
+*/
+
+.valid{
+    color: #25ee79;
+    display: block;
+}
+.invalid{
+    color: #ff0000;
+    display: block;
+}
+.errMsg{
+    color: #ff0000;
+    position: fixed;
+    top: 13x;
+    font-size: .75rem;
+}
+.intructions{display: block;}
+.hide, .offscreen{
+    display: none;
+}
+
+#userIdNote, #passwordNote{
+    font-size: .7rem;
+    align-self: center;
+}
+
+
+.RegisterForm button, .signForm button{
+    width: 30%;
+    align-self: center;
+    padding: .5rem 1rem;
+    margin-top: .5rem;
+    background-color: #021024;
+    color: #eee;
+    border: none;
+    box-shadow: 0 2px 3px 0 #000000;
+    border-radius: .5rem;
+    font-weight: 700;
+}
+
+.RegisterForm p, .signForm p{
+    padding: 0 1rem;
+    font-size: .8rem;
+    font-weight: 700;
+}
+.RegisterForm p span{
+    color: #d1470b;
+    cursor: pointer;
+}
+
+.success-message{
+    background-color: #3aec7f;
+    color: #eee;
+    align-self: center;
+    width: 25%;
+    position: absolute;
+    top: 25%;
+    left: 40%;
+    text-align: center;
+    height: 25%;
+    border-radius: 2rem;
+    box-shadow: 0 2px 3px 0 #06140c;
+}
+
+
+/*SIGN IN*/
