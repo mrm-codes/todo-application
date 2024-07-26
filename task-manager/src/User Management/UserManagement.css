@@ -51,26 +51,7 @@
     outline: none;
 }
 
-/*
 
-.RegisterForm .usernameLabel span{
-    position: absolute;
-    top: 5.6%;
-    left: 57.4%;
-}
-
-.RegisterForm .passwordLabel span{
-    position: absolute;
-    top: 32.6%;
-    left: 57.4%;
-}
-
-.RegisterForm .confirmLabel span{
-    position: absolute;
-    top: 24.3%;
-    left: 57.4%;
-}
-*/
 
 .valid{
     color: #25ee79;
@@ -108,6 +89,7 @@
     box-shadow: 0 2px 3px 0 #000000;
     border-radius: .5rem;
     font-weight: 700;
+    cursor: pointer;
 }
 
 .RegisterForm p, .signForm p{
@@ -121,8 +103,8 @@
 }
 
 .success-message{
-    background-color: #3aec7f;
-    color: #eee;
+    background-color: #22eb6fbe;
+    color: #000000;
     align-self: center;
     width: 25%;
     position: absolute;
@@ -135,4 +117,7 @@
 }
 
 
-/*SIGN IN*/
+/*DASHBOARD8*/
+.user-dashboard{
+    background-color: #f6f7f8;
+}

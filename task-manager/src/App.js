@@ -9,8 +9,11 @@ import Login from './Components/Login';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 
+
 export default function App(){
   return(
+ 
+
     <Router>
       <div className="navigation">
                 <div className="logo"><Link to='/'>Viva <span>???</span></Link></div>
@@ -32,5 +35,6 @@ export default function App(){
                 <Route path="/About" element={<About />} />
             </Routes>
     </Router>
+ 
   );
 }

@@ -1,10 +1,12 @@
 import React, {useState, useRef, useEffect } from 'react';
+import '../User Management/UserManagement.css';
+import { Link } from 'react-router-dom';
 
 import {FaTimes, FaCheck, FaInfoCircle, FaUser} from 'react-icons/fa';
 
 const USER_REGEX = /^[a-zA-Z][a-zA-Z0-9-_]{3,23}/; //User regex
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8-24}$/; //Password Regex
-const Register_URL = '/register';
+
 
 function Register() {
     //User field
@@ -12,9 +14,11 @@ function Register() {
     const errRef = useRef();
     //User field
     const [user, setUser] = useState('');
+    const [userId, setUserId] = useState(0);
     const [validName, setValidName] = useState(false);
     const [userFocus, setUserFocus] = useState(false);
 
+  
     //Password field
     const [pwd, setPwd] = useState('');
     const [validPwd, setValidPwd] = useState(false);
@@ -25,14 +29,14 @@ function Register() {
     const [validMatch, setValidMatch] = useState(false);
     const [matchFocus, setMatchFocus] = useState(false);
 
+    //saving data
+    const [userData, setUserData] = useState([]);
+
     //Result Message
     const [errMsg, setErrMsg] =useState('');
     const [success, setSuccess] = useState(false);
 
-    /*Handing Useffect
-    useEffect(() =>{
-        useRef.current.focus();
-    }, [])*/
+   
 
     useEffect(() =>{
         const result = USER_REGEX.test(user);
@@ -56,20 +60,27 @@ function Register() {
 
     const handleSubmit = async (e) =>{
         e.preventDefault();
-        
-          
+        if (!validName || !validMatch){
+            return
+        } else {
+            setSuccess(true);
+            setUserId(Math.floor(Math.random()*100000));
+            
+        }  
+         
     }
+    
+    
+   
 
   return (
     <>
     {success ? (
         <div className='success-message'>
-            <h1>Success! </h1>
-
-            <p><FaCheck/></p>
-            <p>
-                <a href='#'>Sign in</a>
-            </p>
+            <h2>Success! </h2>
+            <p><span>{user}</span> Successfull registerd!  <FaCheck/></p>
+            
+            <p><Link to='/Login'>Sign in</Link></p>
         </div>
     ):(
     <div className='Register'>
