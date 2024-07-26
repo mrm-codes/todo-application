@@ -1,0 +1,85 @@
+/*
+color palllet
+#00989b - hd
+#dcdedd - bg
+#99a2a1 - bg -2
+#00585a - ttle
+#00181a -ftr
+*/
+
+
+/*NAVIGATION*/
+.navigation{
+    width: 100%;
+    background-color: #000607;
+    color: #eee;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+  .logo{
+    width: 15%;
+    margin: .5rem;
+    font-size: 3rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  
+  .logo span{
+    color: #00989b;
+  }
+  .nav-items{width: 80%;}
+  .nav-items ul{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: end;
+    width: auto;
+  }
+  
+  .nav-items ul li{
+    margin: .5rem;
+    padding: .25rem;
+    cursor: pointer;
+    
+  }
+  
+  .nav-items ul li:hover{
+    color: #1ce0e4;
+  }
+  
+
+  a{text-decoration: none;
+  color: #eee;}
+  
+  a:hover{color: 	#00989b;
+  font-weight: 700;}
+  
+  
+  
+  
+  /*ABOUT*/
+  .about-section{
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #000000 ;
+    color: #eee;
+  }
+  
+  .about-section h1{
+    margin: .5rem 1.5rem 0 1.5rem;
+    padding: 1rem;
+    color:#00989b;
+    background-color: #000607;
+    text-align: center;
+  }
+  
+  .about-cards{
+    margin: .5rem 1.5rem;
+    border: 1px solid #5dcee2;
+    padding: 1rem;
+  }
+  
+  

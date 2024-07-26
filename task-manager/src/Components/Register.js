@@ -1,6 +1,5 @@
 import React, {useState, useRef, useEffect } from 'react';
-import axios from '../api/axios';
-import './UserManagement.css'
+
 import {FaTimes, FaCheck, FaInfoCircle, FaUser} from 'react-icons/fa';
 
 const USER_REGEX = /^[a-zA-Z][a-zA-Z0-9-_]{3,23}/; //User regex
@@ -57,13 +56,7 @@ function Register() {
 
     const handleSubmit = async (e) =>{
         e.preventDefault();
-        try {
-            const res = await axios.post('/api/register', { user, pwd });
-            console.log(res.data);
-            setSuccess(true);
-          } catch (err) {
-            console.error(err);
-          }
+        
           
     }
 

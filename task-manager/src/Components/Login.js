@@ -1,7 +1,7 @@
 import React, {useState, useRef, useEffect } from 'react';
-import UserDashboard from '../User Management/UserDashboard';
-import './UserManagement.css'
-import axios from '../api/axios';
+
+
+
 
 
 function Login() {
@@ -22,15 +22,7 @@ function Login() {
 
     const handleSubmit = async (e) =>{
         e.preventDefault();
-        try {
-            const res = await axios.post('/api/login', { user, pwd});
-            console.log(res.data);
-            setSuccess(true);
-            // Store the token in localStorage
-            localStorage.setItem('token', res.data.token);
-          } catch (err) {
-            console.error(err);
-          }
+       
 
     }
 
