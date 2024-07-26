@@ -1,5 +1,5 @@
 import React, {useState, useRef, useEffect } from 'react';
-import UserDashboard from './UserDashboard';
+import UserDashboard from '../User Management/UserDashboard';
 import './UserManagement.css'
 import axios from '../api/axios';
 
