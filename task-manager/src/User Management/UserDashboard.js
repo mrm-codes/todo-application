@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import '../Images/nobody.jpg';
+import UserProfile from './UserProfile';
 
-function UserDashboard({user}) {
+function UserDashboard() {
   const [visElement, setVisElement] = useState('overview');
   const showElement = (id) =>{
     setVisElement(id);
@@ -11,10 +12,8 @@ function UserDashboard({user}) {
         <div className='header'>
           <div className='user-frame'><img src='../Images/nobody.jpg'></img></div>
           <div className='userDetails'>
-            <h6>John Doe</h6>
-            <p>Data Analitic</p>
-            <div>{user}</div>
-            
+            <p>Joe Doe</p>
+            <h5>Data Analitic</h5>
           </div>
           
         </div>
@@ -53,7 +52,10 @@ function UserDashboard({user}) {
                   <p>0</p></div>
                 </div>
               </div>)}
-              { visElement === 'myProfile' && (<div id='myProfile'>My Profile</div>)}
+              { visElement === 'myProfile' && (<div id='myProfile'>
+                <h1>My Profile</h1>
+                <UserProfile/>
+              </div>)}
               { visElement === 'projects' && (<div id='projects'>Projects</div>)}
               { visElement === 'tasks' && (<div id='tasks'>Tasks</div>)}
               { visElement === 'notifications' && (<div id='notifications'>Notifications</div>)}

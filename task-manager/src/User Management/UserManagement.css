@@ -188,7 +188,9 @@ color: #e94808;}
 }
 
 /*content section*/
-#overview{padding: 0 1rem;}
+#overview, #myProfile,
+#tasks, #projects,
+#notifications, #messages, #logout{padding: 0 1rem;}
 .overview-details{
     display:flex;
     flex-direction: row;
@@ -201,4 +203,110 @@ color: #e94808;}
 .overview-details div p{
     text-align: center;
     font-size: 5rem;
+}
+
+/*User Profile*/
+.user-profile, .Uprofile{
+    display: flex;
+    flex-direction: column;
+}
+.user-profile div, .Uprofile div{
+    margin-bottom: 1.5rem;
+}
+
+.user-profile div div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: baseline;
+}
+
+.user-profile div div input{
+    padding: .75rem;
+    border-radius: .5rem;
+    outline: none;
+    border: none;
+    margin: 0 .5rem;
+    margin-right:3rem;
+    background-color: #ebf3ef;
+    box-shadow: 1px 1px 1px 0 #141a16;
+    width: auto;
+    font-size: 1.2rem;
+}
+
+.user-profile div div label{
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.user-profile div div div{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.user-profile div div div button{
+ 
+    align-self: center;
+    padding: .5rem 1rem;
+    margin-top: .5rem;
+    background-color: #021024;
+    color: #eee;
+    border: none;
+    box-shadow: 0 2px 3px 0 #000000;
+    border-radius: .5rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.user-profile .buttons{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.user-profile button, .Uprofile button{
+    align-self: center;
+    padding: .5rem 1rem;
+    margin-top: .5rem;
+    background-color: #021024;
+    color: #eee;
+    border: none;
+    box-shadow: 0 2px 3px 0 #000000;
+    border-radius: .5rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.user-profile button:hover, .Uprofile button:hover{
+    color:#021024;
+    background-color: #eee;
+}
+
+iframe{
+    width: 8rem;
+    height: 6rem;
+}
+
+/*Profile*/
+.Uprofile div div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.Uprofile div div div{
+    display: flex;
+    flex-direction: column;
+
+}
+.Uprofile div div label span{
+    color:#e94808;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.Uprofile div div label{
+    font-size: 1.1rem;
 }
