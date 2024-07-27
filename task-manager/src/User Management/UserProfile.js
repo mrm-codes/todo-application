@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { createElement, useEffect, useState } from 'react';
+import { FaUpload, FaSave, FaTrash, FaRecycle } from 'react-icons/fa';
 
 
 const UserProfile = () => {
@@ -34,9 +35,34 @@ const UserProfile = () => {
 
     }
 
-    const updatePhoto = (e) =>{
-      e. preventDefault();
+    const editProfile= async (e) =>{
+      e.preventDefault();
+      setIsEditingProfile(true);
+    }
+
+    const handleUpload = async (e) =>{
+      e.preventDefault();
+      const input = document.getElementById("image");
+      const fl =input.attributes.getNamedItem(''); 
+      //const image = createElement("img");
+      //image.src = URL.createObjectURL(fl);
+      //const photo = input.append(image);
       
+      console.log('uploading..')
+      console.log(input)
+      //console.log(photo)
+    }
+
+    const handleSave = async (e) =>{
+      e.preventDefault();
+      setSelPhoto(selPhoto);
+      console.log('Saving..')
+    }
+
+    const handleDelete = async (e) =>{
+      e.preventDefault();
+      setSelPhoto(null);
+      console.log('Deleting..')
     }
       
 
@@ -53,8 +79,13 @@ const UserProfile = () => {
           <label><span>Full Name:</span> {fName} {lName}</label>
     
           <div>
-          <iframe>{selPhoto}</iframe>
-          <button className='update' onClick={(e) => setIsEditingProfile(true)}>Change Photo</button>
+          <iframe>
+            <input 
+              type="file"
+              accept='.jpg, .jpeg, .png, .svg'
+              />
+            </iframe>
+          <button className='update' onClick={(e) => setIsEditingProfile(true)}><FaRecycle/> Photo</button>
         </div>
         </div>
       </div>
@@ -68,7 +99,7 @@ const UserProfile = () => {
         </div>
       </div>
       <div className='buttons'>
-        <button onClick={() => setIsEditingProfile(true)}>Edit Profile</button>
+        <button onClick={editProfile}>Edit Profile</button>
       </div>
       
     </form>
@@ -92,11 +123,18 @@ const UserProfile = () => {
           <iframe>
             <input 
               type='file'
-              accept='image/*'
-              
+              id='image'
+              accept='.jpg, .jpeg, .png, .svg'
+              multiple
              />
           </iframe>
-          <button  className='update'>Update Photo</button>
+          <div className='buttons'>
+            <button  className='upload' onClick={handleUpload}><FaUpload/></button>
+            <button  className='Save' onClick={handleSave}><FaSave/></button>
+            <button  className='delete' onClick={handleDelete}><FaTrash/></button>
+          </div>
+          
+
         </div>
         </div>
       </div>
@@ -122,9 +160,8 @@ const UserProfile = () => {
           />
         </div>
       </div>
-      <div className='buttons'>
+      <div >
         <button >Save Profile</button>
-        <button onClick={(e) => setIsEditingProfile(true)}>Edit Profile</button>
       </div>
       
     </form>

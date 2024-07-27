@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import '../Images/nobody.jpg';
 import UserProfile from './UserProfile';
+import ProjecManager from '../Task Management/ProjectManager';
 
 function UserDashboard() {
   const [visElement, setVisElement] = useState('overview');
@@ -56,7 +57,9 @@ function UserDashboard() {
                 <h1>My Profile</h1>
                 <UserProfile/>
               </div>)}
-              { visElement === 'projects' && (<div id='projects'>Projects</div>)}
+              { visElement === 'projects' && (<div id='projects'>
+                <ProjecManager/>
+              </div>)}
               { visElement === 'tasks' && (<div id='tasks'>Tasks</div>)}
               { visElement === 'notifications' && (<div id='notifications'>Notifications</div>)}
               { visElement === 'messages' && (<div id='messages'>Messages</div>)}

@@ -260,8 +260,15 @@ color: #e94808;}
 
 .user-profile .buttons{
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
 
+}
+
+.user-profile .buttons button{
+    margin-right: .5rem;
+    font-size: 1rem;
+    
 }
 
 .user-profile button, .Uprofile button{
@@ -277,13 +284,14 @@ color: #e94808;}
     cursor: pointer;
 }
 
+
 .user-profile button:hover, .Uprofile button:hover{
     color:#021024;
     background-color: #eee;
 }
 
 iframe{
-    width: 8rem;
+    width: 10rem;
     height: 6rem;
 }
 
