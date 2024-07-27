@@ -1,15 +1,26 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
+import '../Images/nobody.jpg';
 
-function UserDashboard() {
+function UserDashboard({user}) {
   const [visElement, setVisElement] = useState('overview');
   const showElement = (id) =>{
     setVisElement(id);
   }
   return (
     <div className='user-dashboard'>
-        <div className='header'>Header</div>
+        <div className='header'>
+          <div className='user-frame'><img src='../Images/nobody.jpg'></img></div>
+          <div className='userDetails'>
+            <h6>John Doe</h6>
+            <p>Data Analitic</p>
+            <div>{user}</div>
+            
+          </div>
+          
+        </div>
         <div className='main-body'>
             <div className='sidebar'>
+            <h3>Menu</h3>
                 <ul>
                     <li onClick={() => showElement('overview')}>Overview</li>
                     <li onClick={() => showElement('myProfile')}>My Profile</li>
@@ -21,7 +32,27 @@ function UserDashboard() {
                 </ul>
             </div>
             <div className='content'>
-              { visElement === 'overview' && (<div id='overview'>Overview</div>)}
+              
+              { visElement === 'overview' && (<div id='overview'>
+                <h1>Overview</h1>
+                <div className='overview-details'>
+                <div>
+                  <h2>Number of Projects</h2>
+                  <p>02</p>
+                </div>
+                <div>
+                  <h2>Number of Assigned Tasks</h2>
+                  <p>04</p>
+                </div>
+                <div>
+                  <h2>Number of completed Tasks</h2>
+                  <p>06</p>
+                </div>
+                <div>
+                  <h2>Number of Overdue Tasks</h2>
+                  <p>0</p></div>
+                </div>
+              </div>)}
               { visElement === 'myProfile' && (<div id='myProfile'>My Profile</div>)}
               { visElement === 'projects' && (<div id='projects'>Projects</div>)}
               { visElement === 'tasks' && (<div id='tasks'>Tasks</div>)}

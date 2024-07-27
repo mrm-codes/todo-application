@@ -120,4 +120,85 @@
 /*DASHBOARD8*/
 .user-dashboard{
     background-color: #f6f7f8;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    border-bottom: 1px solid #000000;
+}
+.user-frame{
+    width: 5rem;
+    height: 5rem;
+    background-color: #000000;
+    border-radius: 50%;
+    margin: .25rem 1rem;
+}
+.userDetails{
+    background-color: #fafafa;
+    display: flex;
+    flex-direction: row;
+    width: 85%;
+    align-items: center;
+}
+.userDetails p, .userDetails h3{
+    padding: 0 2rem;
+
+}
+
+
+.main-body{
+    border-bottom: 1px solid #000000;
+    display: flex;
+}
+.sidebar{
+    background-color: #000000;
+    color:#fafafa;
+    margin: 0;
+    text-align: left;
+    width: 13%;
+    padding: 0;
+}
+.sidebar h3{text-align: left; padding: 0 2rem;
+color: #e94808;}
+.sidebar ul{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+.sidebar ul li{
+    padding: .5rem 1rem;
+    margin: 0 1rem;
+    cursor: pointer;
+}
+.sidebar ul li:hover{
+    color:#000000;
+    background-color: #fafafa;
+}
+.content{
+    background-color: #f6f7f8;
+    width: 85%;
+}
+
+/*content section*/
+#overview{padding: 0 1rem;}
+.overview-details{
+    display:flex;
+    flex-direction: row;
+    justify-content:space-between;
+}
+
+.overview-details div{
+    margin-right: 5rem;
+}
+.overview-details div p{
+    text-align: center;
+    font-size: 5rem;
 }

@@ -1,7 +1,7 @@
 import React, {useState, useRef, useEffect } from 'react';
 import '../User Management/UserManagement.css';
 import { Link } from 'react-router-dom';
-
+import Users from '../data/users/Users';
 import {FaTimes, FaCheck, FaInfoCircle, FaUser} from 'react-icons/fa';
 
 const USER_REGEX = /^[a-zA-Z][a-zA-Z0-9-_]{3,23}/; //User regex
@@ -18,7 +18,6 @@ function Register() {
     const [validName, setValidName] = useState(false);
     const [userFocus, setUserFocus] = useState(false);
 
-  
     //Password field
     const [pwd, setPwd] = useState('');
     const [validPwd, setValidPwd] = useState(false);
@@ -29,8 +28,12 @@ function Register() {
     const [validMatch, setValidMatch] = useState(false);
     const [matchFocus, setMatchFocus] = useState(false);
 
+    
     //saving data
-    const [userData, setUserData] = useState([]);
+    const [data, setData] = useState({});
+  
+    
+    
 
     //Result Message
     const [errMsg, setErrMsg] =useState('');
@@ -60,26 +63,20 @@ function Register() {
 
     const handleSubmit = async (e) =>{
         e.preventDefault();
-        if (!validName || !validMatch){
-            return
-        } else {
-            setSuccess(true);
-            setUserId(Math.floor(Math.random()*100000));
-            
-        }  
-         
+        setData(data);
+        console.log(data);
+        setSuccess(true)
+
     }
     
     
-   
-
   return (
     <>
     {success ? (
         <div className='success-message'>
             <h2>Success! </h2>
             <p><span>{user}</span> Successfull registerd!  <FaCheck/></p>
-            
+             
             <p><Link to='/Login'>Sign in</Link></p>
         </div>
     ):(
@@ -169,6 +166,9 @@ function Register() {
 
             </p>
             <button
+                onClick={()=>{
+                    setData({"data": {user,pwd, userId}})
+                }}
                 disabled={!validName || !validMatch ? true : false}
             >Register</button>
 
@@ -180,6 +180,8 @@ function Register() {
     )}
     </>
   )
+  
 }
+
 
 export default Register;

@@ -1,13 +1,9 @@
 import React, {useState, useRef, useEffect } from 'react';
 import '../User Management/UserManagement.css';
-import Register from './Register';
+
 import UserDashboard from '../User Management/UserDashboard';
 
-
-
-
-
-function Login() {
+function Login({Register}) {
      //User field
      const userRef = useRef();
      const errRef = useRef();
@@ -18,6 +14,8 @@ function Login() {
      const [errMsg, setErrMsg] =useState('');
      const [success, setSuccess] = useState(false);
      
+     //importing authentication data
+    
 
      
      
@@ -27,20 +25,14 @@ function Login() {
 
     const handleSubmit = async (e) =>{
         e.preventDefault();
-        if (!user || !pwd){
-            console.log('Invalid Input! \n Verify username or password!')
-            setSuccess(false)
-        } else {
-            console.log('You logged in')
-            setSuccess(true)
-        }
-
-       
-
+        setSuccess(true)   
+        
     }
 
   return (
-    <> {success ? (<UserDashboard/>) : (
+    <> {success ? (<>
+    <UserDashboard />
+    </>) : (
         <div className='Login'>
          <p
             ref={errRef}
