@@ -24,8 +24,8 @@ function UserDashboard() {
                 <ul>
                     <li onClick={() => showElement('overview')}>Overview</li>
                     <li onClick={() => showElement('myProfile')}>My Profile</li>
-                    <li onClick={() => showElement('projects')}>Projects</li>
-                    <li onClick={() => showElement('tasks')}>Tasks</li>
+                    <li onClick={() => showElement('projects')}>Manage Projects</li>
+                    <li onClick={() => showElement('tasks')}>Manage Tasks</li>
                     <li onClick={() => showElement('Notifications')}>Notifications</li>
                     <li onClick={() => showElement('Messages')}>Messages</li>
                     <li onClick={() => showElement('Logout')}>Log out</li>
