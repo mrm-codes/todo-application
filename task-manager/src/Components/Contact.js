@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import '../App.css';
 
 function Contact() {
   //Company details
@@ -34,37 +35,62 @@ function Contact() {
     <>
       {
         isSubmitted ? (
-        <div>
+        <div className='submitted-contact'>
+          <div className='submitted-card'>
           <h1>Your Request was sucessfully submitted!</h1>
-          <p>We will responde as soons as Possible</p>
+          <p>We will responde as soons as possible</p>
           <p> Return to <Link to="/"><span>Home Page</span></Link></p>
+          </div>
         </div>) : (
+          <div className='contact'>
           <form className="contact-form" onSubmit={handleSubmit}>
             <h2>Company details</h2>
             <label>Name</label>
             <input 
               type="text"
               name='name'
-              onChange={(e) => setCompName(e.target.value)} />
+              onChange={(e) => setCompName(e.target.value)} 
+              required
+              />
 
             <label>Email</label>
             <input 
               type="email"
-              onChange={(e) => setEmail(e.target.value)} />
+              onChange={(e) => setEmail(e.target.value)} 
+              required/>
 
-            <label>Number of workers</label>
-            <input type="number" onChange={(e) => setNumWorkers(e.target.value)}/>
+            <div>
+              <div>
+                <label>Number of workers: </label>
+                <input 
+                id='numWorkers' 
+                type="number" 
+                onChange={(e) => setNumWorkers(e.target.value)}
+                required/>
+              </div>
 
-            <label>Phone Number</label>
-            <input type="number" onChange={(e) => setPhoneNumber(e.target.value)}/>
+              <div>
+                <label>Phone Number:</label>
+                <input 
+                type="number" 
+                onChange={(e) => setPhoneNumber(e.target.value)}/>
+              </div>
+            </div>
 
             <label>Topic</label>
-            <input type="text" onChange={(e) => setTopic(e.target.value)}/>
+            <input 
+            type="text" 
+            onChange={(e) => setTopic(e.target.value)}
+            required/>
 
             <label>Message</label>
-            <textarea cols={50} rows={10} onChange={(e) => setMessage(e.target.value)}/>
+            <textarea 
+            cols={50} rows={10} 
+            onChange={(e) => setMessage(e.target.value)}
+            required/>
             <input type="submit" />
         </form>
+        </div>
         )
       }
     </>
