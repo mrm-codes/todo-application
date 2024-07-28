@@ -16,7 +16,7 @@ export default function App(){
 
     <Router>
       <div className="navigation">
-                <div className="logo"><Link to='/'>Viva <span>???</span></Link></div>
+                <div className="logo"><Link to='/'>Viva <span>Tech</span></Link></div>
                 <div className="nav-items">
                     <ul>
                         <li><Link to="/">Home</Link></li>
