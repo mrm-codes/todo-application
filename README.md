@@ -14,3 +14,17 @@ This is a web app that allows users to interactively manage their task, through 
 - As a customer i would like to have real-time updates on what task are being tackled, and whom, in order to manage task more effectively according to people performance;
 - As a client, I would like to CRUD my personal tasks, in order to be more productive with my daily tasks.
 - As a client, I want to be able to share my task list and request suggestions before updating it, in order to be efficient with task implementation.
+
+## How to Use?
+1. Go to the webpage:
+2. Contact us or Register an account;
+3. Login
+4. Start a Project
+5. Add Task to a Project
+6. Start a Task
+7. End Task
+8. Update Task on Projects
+9. Logout
+
+
+
