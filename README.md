@@ -26,5 +26,17 @@ This is a web app that allows users to interactively manage their task, through 
 8. Update Task on Projects
 9. Logout
 
+## Used Technologies
+### Software and hardwares
+VScode, React, React-redux, Node.Js, JS, CSS, Html.
+Github
+Computer, internet
+
+## Ideas or Improvements for the future
+1. Add notification and email correspondence system
+2. Add a backended server for data management;
+3. Update personal to Business task management and allow managers to create users account
+4. 
+
 
 
