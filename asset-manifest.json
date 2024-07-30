@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/vivatech.com/static/css/main.c9d7f720.css",
+    "main.js": "/vivatech.com/static/js/main.e03e6409.js",
+    "static/js/453.a53b11f0.chunk.js": "/vivatech.com/static/js/453.a53b11f0.chunk.js",
+    "static/media/video.mp4": "/vivatech.com/static/media/video.1d85d0a92fb847f2efaf.mp4",
+    "index.html": "/vivatech.com/index.html",
+    "main.c9d7f720.css.map": "/vivatech.com/static/css/main.c9d7f720.css.map",
+    "main.e03e6409.js.map": "/vivatech.com/static/js/main.e03e6409.js.map",
+    "453.a53b11f0.chunk.js.map": "/vivatech.com/static/js/453.a53b11f0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c9d7f720.css",
+    "static/js/main.e03e6409.js"
+  ]
+}
