@@ -1,0 +1,320 @@
+/*REGISTER*/
+.Register, .Login{
+    display: flex;
+    background-color: aquamarine;
+    align-items: center;
+    justify-content: center;
+}
+.RegisterForm, .signForm{
+    background-color: #c1e8ff;
+    width: 20rem;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    
+    text-align: left;
+    margin: 2rem;
+    box-shadow: 0 2px 3px 0 #000000;
+    border-radius: .5rem;
+    border: none;
+   
+}
+.RegisterForm h2, .signForm h2{
+    background-color: #021024 ;
+    color: #eee;
+    text-align: center;
+    padding: 1rem;
+    margin: 0;
+    box-shadow: 0 1px 0px 1px #e94808;
+    border-radius: .25rem;
+    border: none;;
+}
+
+
+.RegisterForm label, .signForm label{
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: left;
+    padding: .5rem 1rem .25rem 1rem;
+
+}
+
+.RegisterForm input, .signForm input{
+    padding: .75rem 1rem;
+    align-self: center;
+    width: 80%;
+    box-shadow: 0 2px 3px 0 #000000;
+    border-radius: .5rem;
+    border: none;
+    align-self: center;
+    font-size: 1rem;
+    outline: none;
+}
+
+
+
+.valid{
+    color: #25ee79;
+    display: block;
+}
+.invalid{
+    color: #ff0000;
+    display: block;
+}
+.errMsg{
+    color: #ff0000;
+    position: fixed;
+    top: 13x;
+    font-size: .75rem;
+}
+.intructions{display: block;}
+.hide, .offscreen{
+    display: none;
+}
+
+#userIdNote, #passwordNote{
+    font-size: .7rem;
+    align-self: center;
+}
+
+
+.RegisterForm button, .signForm button{
+    width: 30%;
+    align-self: center;
+    padding: .5rem 1rem;
+    margin-top: .5rem;
+    background-color: #021024;
+    color: #eee;
+    border: none;
+    box-shadow: 0 2px 3px 0 #000000;
+    border-radius: .5rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.RegisterForm p, .signForm p{
+    padding: 0 1rem;
+    font-size: .8rem;
+    font-weight: 700;
+}
+.RegisterForm p span{
+    color: #d1470b;
+    cursor: pointer;
+}
+
+.success-message{
+    background-color: #22eb6fbe;
+    color: #000000;
+    align-self: center;
+    width: 25%;
+    position: absolute;
+    top: 25%;
+    left: 40%;
+    text-align: center;
+    height: 25%;
+    border-radius: 2rem;
+    box-shadow: 0 2px 3px 0 #06140c;
+}
+
+
+/*DASHBOARD8*/
+.user-dashboard{
+    background-color: #f6f7f8;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    border-bottom: 1px solid #000000;
+}
+.user-frame{
+    width: 5rem;
+    height: 5rem;
+    background-color: #000000;
+    border-radius: 50%;
+    margin: .25rem 1rem;
+}
+.userDetails{
+    background-color: #fafafa;
+    display: flex;
+    flex-direction: row;
+    width: 85%;
+    align-items: center;
+}
+.userDetails p, .userDetails h3{
+    padding: 0 2rem;
+
+}
+
+
+.main-body{
+    border-bottom: 1px solid #000000;
+    display: flex;
+}
+.sidebar{
+    background-color: #000000;
+    color:#fafafa;
+    margin: 0;
+    text-align: left;
+    width: 13%;
+    padding: 0;
+}
+.sidebar h3{text-align: left; padding: 0 2rem;
+color: #e94808;}
+.sidebar ul{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+.sidebar ul li{
+    padding: .5rem 1rem;
+    margin: 0 1rem;
+    cursor: pointer;
+}
+.sidebar ul li:hover{
+    color:#000000;
+    background-color: #fafafa;
+}
+.content{
+    background-color: #f6f7f8;
+    width: 85%;
+}
+
+/*content section*/
+#overview, #myProfile,
+#tasks, #projects,
+#notifications, #messages, #logout{padding: 0 1rem;}
+.overview-details{
+    display:flex;
+    flex-direction: row;
+    justify-content:space-between;
+}
+
+.overview-details div{
+    margin-right: 5rem;
+}
+.overview-details div p{
+    text-align: center;
+    font-size: 5rem;
+}
+
+/*User Profile*/
+.user-profile, .Uprofile{
+    display: flex;
+    flex-direction: column;
+}
+.user-profile div, .Uprofile div{
+    margin-bottom: 1.5rem;
+}
+
+.user-profile div div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: baseline;
+}
+
+.user-profile div div input{
+    padding: .75rem;
+    border-radius: .5rem;
+    outline: none;
+    border: none;
+    margin: 0 .5rem;
+    margin-right:3rem;
+    background-color: #ebf3ef;
+    box-shadow: 1px 1px 1px 0 #141a16;
+    width: auto;
+    font-size: 1.2rem;
+}
+
+.user-profile div div label{
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.user-profile div div div{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.user-profile div div div button{
+ 
+    align-self: center;
+    padding: .5rem 1rem;
+    margin-top: .5rem;
+    background-color: #021024;
+    color: #eee;
+    border: none;
+    box-shadow: 0 2px 3px 0 #000000;
+    border-radius: .5rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.user-profile .buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.user-profile .buttons button{
+    margin-right: .5rem;
+    font-size: 1rem;
+    
+}
+
+.user-profile button, .Uprofile button{
+    align-self: center;
+    padding: .5rem 1rem;
+    margin-top: .5rem;
+    background-color: #021024;
+    color: #eee;
+    border: none;
+    box-shadow: 0 2px 3px 0 #000000;
+    border-radius: .5rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+
+.user-profile button:hover, .Uprofile button:hover{
+    color:#021024;
+    background-color: #eee;
+}
+
+iframe{
+    width: 10rem;
+    height: 6rem;
+}
+
+/*Profile*/
+.Uprofile div div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.Uprofile div div div{
+    display: flex;
+    flex-direction: column;
+
+}
+.Uprofile div div label span{
+    color:#e94808;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.Uprofile div div label{
+    font-size: 1.1rem;
+}
