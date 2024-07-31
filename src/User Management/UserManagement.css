@@ -280,7 +280,7 @@ color: #e94808;}
     
 }
 
-.user-profile button, .Uprofile button{
+.user-profile button, .UpdatedProfile button{
     align-self: center;
     padding: .5rem 1rem;
     margin-top: .5rem;
@@ -294,7 +294,7 @@ color: #e94808;}
 }
 
 
-.user-profile button:hover, .Uprofile button:hover{
+.user-profile button:hover, .UpdatedProfile button:hover{
     color:#021024;
     background-color: #eee;
 }
@@ -311,25 +311,34 @@ color: #e94808;}
 }
 
 /*Profile*/
-.Uprofile div div{
+.UpdatedProfile div{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
     align-items: center;
+    margin: 0;
 }
 
-.Uprofile div div div{
-    display: flex;
-    flex-direction: column;
 
-}
-.Uprofile div div label span{
+
+
+.UpdatedProfile div label span{
     color:#e94808;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: 700;
 }
 
-.Uprofile div div label{
-    font-size: 1.1rem;
+.UpdatedProfile div img{
+    width: 7rem;
 }
+
+.UpdatedProfile div div{
+    display: flex;
+    flex-direction: column;
+}
+
+.UpdatedProfile div label{
+    font-size: 1.3rem;
+}
+#editProfBtn{margin: 1.75rem 0 1rem 0;}

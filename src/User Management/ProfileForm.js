@@ -3,9 +3,7 @@ import { FaUpload, FaSave, FaTrash, FaRecycle } from 'react-icons/fa';
 
 
 const ProfileForm = ({user, onUpdateUser}) => {
-    //actions
-    //const [isEditingProfile, setIsEditingProfile] = useState(false);
-
+   
     //form state
     const [formState, setFormState] = useState(user);
 
@@ -29,14 +27,45 @@ const ProfileForm = ({user, onUpdateUser}) => {
     const handleSubmit = (e) =>{
       e.preventDefault();
       onUpdateUser(formState);
-      console.log(user);
+      setIsEditingProfile(false)
     };
 
+    //Editing form
+    const [isEditingProfile, setIsEditingProfile] = useState(false);
 
+    const handleEditProfile = (e) =>{
+      e.preventDefault();
+      setIsEditingProfile(true);
+
+    }
 
   return (
-   
-      <form className='user-profile' onSubmit={handleSubmit}>
+    <>
+    {
+      !isEditingProfile ? (
+        <div className="UpdatedProfile">
+          <h2>Personal Information</h2>
+          <div>
+              <label><span>Full Name:</span> {formState.fullName}</label>
+              <label><span>Email:</span> {formState.email}</label>
+              <label><span>Phone Number: </span>{formState.contact}</label>
+              <div>
+                <img src={formState.image} alt='profile-image' />
+                <button  onClick={handleEditProfile}><FaRecycle/></button>
+              </div>
+          </div>
+
+          <h2>Job Information</h2>
+          <div>
+            <label><span>Position: </span>{formState.jobPosition}</label>
+            <label><span>Department: </span>{formState.department}</label>
+            <label><span>Manager's Name: </span>{formState.manager}</label>
+          </div>
+
+          <button id='editProfBtn' onClick={handleEditProfile}>Edit Profile</button>          
+        </div>
+      ) : (
+        <form className='user-profile' onSubmit={handleSubmit}>
       <div>
         <h2>Personal Information</h2>
         <div>
@@ -74,6 +103,8 @@ const ProfileForm = ({user, onUpdateUser}) => {
               onChange={handleImageUpload}
              />
           </label>
+
+          
           
           <div className='buttons'>
             <button  className='upload' ><FaUpload/></button>
@@ -118,7 +149,9 @@ const ProfileForm = ({user, onUpdateUser}) => {
       </div>
       
     </form>
-   
+      )
+    }
+    </>
   ); 
  
 };
