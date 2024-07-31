@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-
-import UserProfile from './UserProfile';
+import img_sample from '../media/nobody.jpg';
+import Profile from './Profile';
 import ProjecManager from '../Task Management/ProjectManager';
 
 function UserDashboard() {
@@ -11,7 +11,7 @@ function UserDashboard() {
   return (
     <div className='user-dashboard'>
         <div className='header'>
-          <div className='user-frame'><img src='../Images/nobody.jpg'></img></div>
+          <div className='user-frame'><img src={img_sample}></img></div>
           <div className='userDetails'>
             <p>Joe Doe</p>
             <h5>Data Analitic</h5>
@@ -54,8 +54,7 @@ function UserDashboard() {
                 </div>
               </div>)}
               { visElement === 'myProfile' && (<div id='myProfile'>
-                <h1>My Profile</h1>
-                <UserProfile/>
+                <Profile/>
               </div>)}
               { visElement === 'projects' && (<div id='projects'>
                 <ProjecManager/>

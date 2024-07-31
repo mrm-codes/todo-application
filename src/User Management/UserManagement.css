@@ -137,6 +137,15 @@
     background-color: #000000;
     border-radius: 50%;
     margin: .25rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-frame img{
+    width: 70px;
+    background-color: inherit;
+    border-radius: inherit;
 }
 .userDetails{
     background-color: #fafafa;
@@ -290,9 +299,15 @@ color: #e94808;}
     background-color: #eee;
 }
 
-iframe{
+.profile-frame{
     width: 10rem;
-    height: 6rem;
+    height: 5rem;
+    background-color: #868585;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /*Profile*/

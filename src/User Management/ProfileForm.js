@@ -1,57 +1,126 @@
-import React from 'react'
+import React, { useState } from 'react';
+import { FaUpload, FaSave, FaTrash, FaRecycle } from 'react-icons/fa';
 
-function ProfileForm() {
+
+const ProfileForm = ({user, onUpdateUser}) => {
+    //actions
+    //const [isEditingProfile, setIsEditingProfile] = useState(false);
+
+    //form state
+    const [formState, setFormState] = useState(user);
+
+    const handleInputChange = (e) => {
+      const { name, value } = e.target;
+      setFormState({...formState, [name]: value});
+    };
+
+    const handleImageUpload =(e) =>{
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onloadend = () =>{
+          setFormState({...formState, image: reader.result});
+        };
+        reader.readAsDataURL(file);
+      }
+    };
+
+    //submiting form
+    const handleSubmit = (e) =>{
+      e.preventDefault();
+      onUpdateUser(formState);
+      console.log(user);
+    };
+
+
+
   return (
-    <form className='user-profile' onSubmit={handleSubmit}>
-    <div>
-      
-      
-      <h2>Personal Information</h2>
+   
+      <form className='user-profile' onSubmit={handleSubmit}>
       <div>
-        <label>First Name:</label>
-        <input 
-          type='text'
-          onChange={(e) => setFName(e.target.value)} />
-        <label>Last Name:</label>
-        <input 
-          type='text'
-          onChange={(e) => setLName(e.target.value)} />
-        
+        <h2>Personal Information</h2>
         <div>
-        <iframe><img src='/nobody,jpg'></img></iframe>
-        <button className='update'>Update Photo</button>
-      </div>
-      </div>
-    </div>
+          <label>Full Name:</label>
+          <input 
+            type='text'
+            name='fullName'
+            value={formState.fullName}
+            onChange={handleInputChange} />
 
-    <div>
-      <h2>Job Information</h2>
+
+          <label>Email:</label>
+          <input
+            type='email'
+            name='email'
+            value={formState.email}
+            onChange={handleInputChange}
+          
+          />
+
+          <label>Phone Number:</label>
+          <input
+            type='text'
+            name='contact'
+            value={formState.contact}
+            onChange={handleInputChange}
+          />
+          
+          <div>
+          <label>Profile image:
+            <input 
+              type='file'
+              id='image'
+              accept='.jpg, .jpeg, .png, .svg'
+              onChange={handleImageUpload}
+             />
+          </label>
+          
+          <div className='buttons'>
+            <button  className='upload' ><FaUpload/></button>
+            <button  className='Save' ><FaSave/></button>
+            <button  className='delete' ><FaTrash/></button>
+          </div>
+          
+
+        </div>
+        </div>
+      </div>
+  
       <div>
-        <label>Job Position:</label>
-        <input 
-          type='text'
-          onChange={(e) => setJobPos(e.target.value)} />
-
-        <label>Department:</label>
-        <input 
-          type='text'
-          onChange={(e) => setDep(e.target.value)} />
-
-
-        <label>Managers' Name:</label>
-        <input 
-          type='text'
-          onChange={(e) => setManagerName(e.target.value)}           
-        />
+        <h2>Job Information</h2>
+        <div>
+          <label>Job Position:</label>
+          <input 
+            type='text'
+            name='jobPosition'
+            value={formState.jobPosition}
+            onChange={handleInputChange} />
+  
+          <label>Department:</label>
+          <input 
+            type='text'
+            name='department'
+            value={formState.department}
+            onChange={handleInputChange} />
+  
+  
+          <label>Managers' Name:</label>
+          <input 
+            type='text'
+            name='manager'
+            value={formState.manager}
+            onChange={handleInputChange}           
+          />
+        </div>
       </div>
-    </div>
-    <div className='buttons'>
-      <button >Save Profile</button>
-      <button>Edit Profile</button>
-    </div>
-    
-  </form>
-  )
-}
+      <div >
+        <button type='submit'>Save Profile</button>
+      </div>
+      
+    </form>
+   
+  ); 
+ 
+};
 
-export default ProfileForm
+export default ProfileForm;
