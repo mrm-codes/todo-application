@@ -3,7 +3,7 @@ import img_sample from '../media/nobody.jpg';
 import Profile from './Profile';
 import ProjecManager from '../Task Management/ProjectManager';
 
-function UserDashboard() {
+function UserDashboard({}) {
   const [visElement, setVisElement] = useState('overview');
   const showElement = (id) =>{
     setVisElement(id);

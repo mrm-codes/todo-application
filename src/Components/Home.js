@@ -1,7 +1,7 @@
-import React, {Link} from 'react';
+import React, {Link} from 'react-router-dom';
 import '../App.css';
 import Contact from '../Components/Contact';
-import '../media/video.mp4';
+import vid from '../media/video.mp4';
 
 
 function Home() {
@@ -10,13 +10,17 @@ function Home() {
       <div className='intro'>
         <h1>Viva Tech</h1>
         <p>"A better place to have your projects and daily activities organized and easy to keep track on!"</p>
-        <button>Get started</button>
+        <button><Link to="/contact">Get started</Link></button>
       </div>
 
       <div className='showcase'>
-        <iframe>
-          <video src='../media/video.mp4' />
-        </iframe>
+        <div>
+          <p>Help your team to increase their perfomance, with better organization</p>
+        </div>
+        <div>
+          <video src={vid} loop="true" autoPlay muted/>
+        </div>  
+        
       </div>
 
       <div className='how-to'>
@@ -30,7 +34,7 @@ function Home() {
           <li>Add Task to your Projects</li>
 
         </ol>
-        <button>Get started</button>
+        <button><Link to="/contact">Get started</Link></button>
       </div>
     </div>
   )

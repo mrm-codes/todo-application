@@ -223,14 +223,15 @@ color: #e94808;}
     margin-bottom: 1.5rem;
 }
 
-.user-profile div div {
+.user-profile div{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: baseline;
+    justify-content: space-between;
 }
 
-.user-profile div div input{
+.user-profile div input{
     padding: .75rem;
     border-radius: .5rem;
     outline: none;
@@ -243,36 +244,11 @@ color: #e94808;}
     font-size: 1.2rem;
 }
 
-.user-profile div div label{
+.user-profile div label{
     font-size: 1.2rem;
     font-weight: 700;
 }
 
-.user-profile div div div{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-}
-.user-profile div div div button{
- 
-    align-self: center;
-    padding: .5rem 1rem;
-    margin-top: .5rem;
-    background-color: #021024;
-    color: #eee;
-    border: none;
-    box-shadow: 0 2px 3px 0 #000000;
-    border-radius: .5rem;
-    font-weight: 700;
-    cursor: pointer;
-}
-
-.user-profile .buttons{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
-}
 
 .user-profile .buttons button{
     margin-right: .5rem;

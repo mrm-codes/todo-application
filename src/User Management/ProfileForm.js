@@ -66,9 +66,10 @@ const ProfileForm = ({user, onUpdateUser}) => {
         </div>
       ) : (
         <form className='user-profile' onSubmit={handleSubmit}>
-      <div>
+      
         <h2>Personal Information</h2>
         <div>
+          <div>
           <label>Full Name:</label>
           <input 
             type='text'
@@ -76,7 +77,17 @@ const ProfileForm = ({user, onUpdateUser}) => {
             value={formState.fullName}
             onChange={handleInputChange} />
 
+          <label>Profile image:
+            <input 
+              type='file'
+              id='image'
+              accept='.jpg, .jpeg, .png, .svg'
+              onChange={handleImageUpload}
+             />
+          </label>
+          </div>
 
+          <div>
           <label>Email:</label>
           <input
             type='email'
@@ -93,29 +104,10 @@ const ProfileForm = ({user, onUpdateUser}) => {
             value={formState.contact}
             onChange={handleInputChange}
           />
-          
-          <div>
-          <label>Profile image:
-            <input 
-              type='file'
-              id='image'
-              accept='.jpg, .jpeg, .png, .svg'
-              onChange={handleImageUpload}
-             />
-          </label>
-
-          
-          
-          <div className='buttons'>
-            <button  className='upload' ><FaUpload/></button>
-            <button  className='Save' ><FaSave/></button>
-            <button  className='delete' ><FaTrash/></button>
           </div>
           
-
         </div>
-        </div>
-      </div>
+      
   
       <div>
         <h2>Job Information</h2>
