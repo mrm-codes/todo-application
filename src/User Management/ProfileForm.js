@@ -75,7 +75,10 @@ const ProfileForm = ({user, onUpdateUser}) => {
             type='text'
             name='fullName'
             value={formState.fullName}
-            onChange={handleInputChange} />
+            onChange={handleInputChange}
+            required />
+            
+
 
           <label>Profile image:
             <input 
@@ -83,6 +86,7 @@ const ProfileForm = ({user, onUpdateUser}) => {
               id='image'
               accept='.jpg, .jpeg, .png, .svg'
               onChange={handleImageUpload}
+              required
              />
           </label>
           </div>
@@ -94,6 +98,7 @@ const ProfileForm = ({user, onUpdateUser}) => {
             name='email'
             value={formState.email}
             onChange={handleInputChange}
+            required
           
           />
 
@@ -103,6 +108,7 @@ const ProfileForm = ({user, onUpdateUser}) => {
             name='contact'
             value={formState.contact}
             onChange={handleInputChange}
+            required
           />
           </div>
           
@@ -117,14 +123,16 @@ const ProfileForm = ({user, onUpdateUser}) => {
             type='text'
             name='jobPosition'
             value={formState.jobPosition}
-            onChange={handleInputChange} />
+            onChange={handleInputChange} 
+            required/>
   
           <label>Department:</label>
           <input 
             type='text'
             name='department'
             value={formState.department}
-            onChange={handleInputChange} />
+            onChange={handleInputChange} 
+            required/>
   
   
           <label>Managers' Name:</label>
@@ -132,7 +140,8 @@ const ProfileForm = ({user, onUpdateUser}) => {
             type='text'
             name='manager'
             value={formState.manager}
-            onChange={handleInputChange}           
+            onChange={handleInputChange} 
+            required          
           />
         </div>
       </div>

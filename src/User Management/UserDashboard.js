@@ -1,12 +1,21 @@
 import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
 import img_sample from '../media/nobody.jpg';
 import Profile from './Profile';
 import ProjecManager from '../Task Management/ProjectManager';
+import Login from '../Components/Login';
 
-function UserDashboard({}) {
+export default function UserDashboard() {
   const [visElement, setVisElement] = useState('overview');
   const showElement = (id) =>{
     setVisElement(id);
+  }
+
+  const [loggingout, setLoggingout] =useState(false);
+
+  const handleLogout = (e) =>{
+    e.preventDefault();
+    setLoggingout(true);
   }
   return (
     <div className='user-dashboard'>
@@ -26,9 +35,8 @@ function UserDashboard({}) {
                     <li onClick={() => showElement('myProfile')}>My Profile</li>
                     <li onClick={() => showElement('projects')}>Manage Projects</li>
                     <li onClick={() => showElement('tasks')}>Manage Tasks</li>
-                    <li onClick={() => showElement('Notifications')}>Notifications</li>
-                    <li onClick={() => showElement('Messages')}>Messages</li>
-                    <li onClick={() => showElement('Logout')}>Log out</li>
+                  
+                    <li onClick={handleLogout}>Log out</li>
                 </ul>
             </div>
             <div className='content'>
@@ -60,13 +68,28 @@ function UserDashboard({}) {
                 <ProjecManager/>
               </div>)}
               { visElement === 'tasks' && (<div id='tasks'>Tasks</div>)}
-              { visElement === 'notifications' && (<div id='notifications'>Notifications</div>)}
-              { visElement === 'messages' && (<div id='messages'>Messages</div>)}
-              { visElement === 'logout' && (<div id='logout'>Logout</div>)}
+              
+              {!loggingout ? (
+                <div></div>
+              ) : (
+                <div className='logout'>
+                  <h2>Are you sure you want to Logout?</h2>
+                  <div>
+                    <button><Link to="/">Yes</Link></button>
+                    <button onClick={(e) => setLoggingout(false)}>No</button>
+                  </div>
+                  
+                </div>
+                
+                
+              )}
+             
             </div>
         </div>
+        
     </div>
   )
-}
+  
+};
 
-export default UserDashboard
+

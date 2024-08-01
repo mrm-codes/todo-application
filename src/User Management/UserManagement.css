@@ -330,3 +330,51 @@ color: #e94808;}
     font-size: 1.3rem;
 }
 #editProfBtn{margin: 1.75rem 0 1rem 0;}
+
+
+/*Logging Out*/
+.logout{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    background-color: #eeeeee;
+    color: #ebf3ef;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 30%;
+    left: 40%;
+    height: 25%;
+    border-radius: 2rem;
+    box-shadow: 0 2px 2px 0 #021024;
+    color: #000000;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.logout div{
+    width: 30%;
+    display:  flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.logout div button{
+    align-self: center;
+    padding: .5rem 1rem;
+    margin-top: .5rem;
+    background-color: #021024;
+    color: #eee;
+    border: none;
+    box-shadow: 0 2px 3px 0 #000000;
+    border-radius: .5rem;
+    font-family:  Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.logout div button:hover{
+    color:#021024;
+    background-color: #eee;
+}
