@@ -1,5 +1,7 @@
 import React, {useState, useRef, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import '../User Management/UserManagement.css';
+
 
 import UserDashboard from '../User Management/UserDashboard';
 
@@ -43,7 +45,7 @@ function Login({Register}) {
         
 
         <form onSubmit={handleSubmit} className='signForm'>
-        <h2> Sign In</h2>
+        <h2>  Sign In </h2>
             <label htmlFor='username'>Username:</label>
             <input 
                 type='text'
@@ -69,7 +71,7 @@ function Login({Register}) {
 
             <button>Sign In</button>
             
-            <p>Need an Account? <span className='link'><a href= '#'>Sign Up here!</a></span></p>
+            <p>Need an Account? <span><Link to="/register">Sign Up here!</Link></span></p>
         </form>
         
         
