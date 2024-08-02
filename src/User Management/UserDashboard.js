@@ -1,16 +1,44 @@
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import img_sample from '../media/nobody.jpg';
-import Profile from './Profile';
+
 import ProjecManager from '../Task Management/ProjectManager';
-import Login from '../Components/Login';
+import ProfileBg from './ProfileBg';
+import ProfileForm from './ProfileForm';
+
+
+
 
 export default function UserDashboard() {
+  //User Background
+
+  const [user, setUser] = useState({
+    image: img_sample,
+    fullName: 'Joe Doe',
+    email: 'joedoe@example.com',
+    contact: '123456789',
+    jobPosition: 'Plumber',
+    department: 'Maintenance',
+    manager: 'R. Bold'
+});
+
+const handleUpdateUser = (updatedUser) =>{
+  setUser(updatedUser);
+}
+ 
+
+
+  
+
+ 
+
+  //side bar navigation
   const [visElement, setVisElement] = useState('overview');
   const showElement = (id) =>{
     setVisElement(id);
   }
 
+  // logging out buttons
   const [loggingout, setLoggingout] =useState(false);
 
   const handleLogout = (e) =>{
@@ -20,12 +48,11 @@ export default function UserDashboard() {
   return (
     <div className='user-dashboard'>
         <div className='header'>
-          <div className='user-frame'><img src={img_sample}></img></div>
-          <div className='userDetails'>
-            <p>Joe Doe</p>
-            <h5>Data Analitic</h5>
-          </div>
           
+            <ProfileBg user={user}
+            onUpdateUser={handleUpdateUser}
+            />
+             
         </div>
         <div className='main-body'>
             <div className='sidebar'>
@@ -61,13 +88,19 @@ export default function UserDashboard() {
                   <p>0</p></div>
                 </div>
               </div>)}
+
               { visElement === 'myProfile' && (<div id='myProfile'>
-                <Profile/>
+                <ProfileForm 
+                 user={user}
+                onUpdateUser={handleUpdateUser}
+                />
+
               </div>)}
+
               { visElement === 'projects' && (<div id='projects'>
-                <ProjecManager/>
+                <ProjecManager/> 
               </div>)}
-              { visElement === 'tasks' && (<div id='tasks'>Tasks</div>)}
+              
               
               {!loggingout ? (
                 <div></div>
@@ -80,9 +113,7 @@ export default function UserDashboard() {
                   </div>
                   
                 </div>
-                
-                
-              )}
+                  )}
              
             </div>
         </div>

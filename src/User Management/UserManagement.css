@@ -134,15 +134,31 @@
     background-color: #f6f7f8;
     display: flex;
     flex-direction: column;
-    font-family: 'Times New Roman', Times, serif;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-.header{
+.header{border-bottom: 1px solid #000000;}
+
+.header div{
     display: flex;
     flex-direction: row;
     align-items:center;
-    border-bottom: 1px solid #000000;
+    
 }
+
+.userDetails{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: end;
+    
+}
+
+.userDetails p{
+    font-size: 1rem;
+    font-weight: 700;
+}
+.userDetails p span{color:#5dcee2}
 .user-frame{
     width: 5rem;
     height: 5rem;

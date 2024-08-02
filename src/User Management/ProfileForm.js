@@ -6,10 +6,13 @@ const ProfileForm = ({user, onUpdateUser}) => {
    
     //form state
     const [formState, setFormState] = useState(user);
+    
+
 
     const handleInputChange = (e) => {
       const { name, value } = e.target;
       setFormState({...formState, [name]: value});
+      
     };
 
     const handleImageUpload =(e) =>{
@@ -18,6 +21,7 @@ const ProfileForm = ({user, onUpdateUser}) => {
         const reader = new FileReader();
         reader.onloadend = () =>{
           setFormState({...formState, image: reader.result});
+         
         };
         reader.readAsDataURL(file);
       }
@@ -27,7 +31,7 @@ const ProfileForm = ({user, onUpdateUser}) => {
     const handleSubmit = (e) =>{
       e.preventDefault();
       onUpdateUser(formState);
-      setIsEditingProfile(false)
+      setIsEditingProfile(false);
     };
 
     //Editing form
@@ -36,14 +40,13 @@ const ProfileForm = ({user, onUpdateUser}) => {
     const handleEditProfile = (e) =>{
       e.preventDefault();
       setIsEditingProfile(true);
-
     }
 
   return (
     <>
     {
       !isEditingProfile ? (
-        <div className="UpdatedProfile">
+        (<div className="UpdatedProfile">
           <h2>Personal Information</h2>
           <div>
               <label><span>Full Name:</span> {formState.fullName}</label>
@@ -63,8 +66,7 @@ const ProfileForm = ({user, onUpdateUser}) => {
           </div>
 
           <button id='editProfBtn' onClick={handleEditProfile}>Edit Profile</button>          
-        </div>
-      ) : (
+        </div>)       ) : (
         <form className='user-profile' onSubmit={handleSubmit}>
       
         <h2>Personal Information</h2>
@@ -74,12 +76,10 @@ const ProfileForm = ({user, onUpdateUser}) => {
           <input 
             type='text'
             name='fullName'
-            value={formState.fullName}
+            value={formState.fullName }
             onChange={handleInputChange}
             required />
-            
-
-
+         
           <label>Profile image:
             <input 
               type='file'
@@ -122,7 +122,7 @@ const ProfileForm = ({user, onUpdateUser}) => {
           <input 
             type='text'
             name='jobPosition'
-            value={formState.jobPosition}
+            value={formState.jobPosition }
             onChange={handleInputChange} 
             required/>
   
@@ -130,7 +130,7 @@ const ProfileForm = ({user, onUpdateUser}) => {
           <input 
             type='text'
             name='department'
-            value={formState.department}
+            value={formState.department }
             onChange={handleInputChange} 
             required/>
   
