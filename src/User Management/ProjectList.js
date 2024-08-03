@@ -28,11 +28,11 @@ export default function ProjectList({projects, addProject, updateProject, delete
           <Project 
             key={project.id} 
             project={project} 
-            updateProject={updateProject} 
-            deleteProject={deleteProject}
-            addTask={addTask}
-            updateTask={updateTask}
-            deleteTask={deleteTask}
+            //updateProject={updateProject} 
+            //deleteProject={deleteProject}
+            //addTask={addTask}
+            //updateTask={updateTask}
+            //deleteTask={deleteTask}
            
           />
         ))}

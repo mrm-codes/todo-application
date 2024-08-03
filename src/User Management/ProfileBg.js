@@ -1,27 +1,7 @@
-import React, {useState} from 'react';
-import ProfileForm from './ProfileForm';
-import UserDashboard from './UserDashboard';
+import React from 'react';
 
-function ProfileBg({user, onUpdateUser}) {
-  const [bgState, setBgState] = useState();
 
-  const handleInputChange = (e) =>{
-    const { name, value } = e.target;
-    setBgState({...bgState, [name]: value});
-  }
-
-  const handleImageUpload =(e) =>{
-    const file = e.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () =>{
-        setBgState({...bgState, image: reader.result});
-       
-      };
-      reader.readAsDataURL(file);
-    }
-  };
-
+function ProfileBg({user}) {
 
   return (
     <div>

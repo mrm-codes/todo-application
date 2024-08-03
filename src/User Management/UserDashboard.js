@@ -1,16 +1,21 @@
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import img_sample from '../media/nobody.jpg';
+import ProjectList from './ProjectList';
 
-import ProjecManager from '../Task Management/ProjectManager';
 import ProfileBg from './ProfileBg';
 import ProfileForm from './ProfileForm';
+import TaskManager from './TaskManager';
+import MyProjects from './MyProjects';
+import Project from './Project';
+import Test from './ProjectListHolder';
+import ProjectListHolder from './ProjectListHolder';
 
 
 
 
 export default function UserDashboard() {
-  //User Background
+  //User Profile 
 
   const [user, setUser] = useState({
     image: img_sample,
@@ -25,13 +30,50 @@ export default function UserDashboard() {
 const handleUpdateUser = (updatedUser) =>{
   setUser(updatedUser);
 }
- 
+//----------------------------------------
+//POJECT MANAGER
+const [projects, setProjects] = useState([]);
 
 
-  
 
- 
+//Project action
+const addProject = (name, id) =>{
+    setProjects([...projects, {id: Date.now(), name, tasks: []}]);
+    
+   
+};
 
+const updateProject = (id, newName) =>{
+    setProjects(projects.map(project => project.id === id ? {...project, name: newName}: project));
+   
+    
+};
+
+const deleteProject = (id) =>{
+    setProjects(projects.filter(project => project.id !== id));
+   
+};
+/*
+//Task actions
+const addTask = (projectID, taskName) =>{
+    setProjects(projects.map(project => project.id === projectID ?
+        {...project, tasks: [...project.tasks, {id: Date.now(), name: taskName}]}:project));
+};
+
+const updateTask = (projectID, taskID, newTask) =>{
+    setProjects(projects.map(
+        project => project.id === projectID ? 
+        {...project, tasks: project.tasks.map(
+            task => task.id === taskID ?
+            {...task, name: newTask}: task)}: project));
+};
+
+const deleteTask = (projectID, taskID) =>{
+    setProjects(projects.map(project => project.id === projectID ?
+    {...project, tasks: project.tasks.filter(task => task.id !== taskID)}: project))
+};
+*/
+// ---------------------------------------------
   //side bar navigation
   const [visElement, setVisElement] = useState('overview');
   const showElement = (id) =>{
@@ -45,14 +87,13 @@ const handleUpdateUser = (updatedUser) =>{
     e.preventDefault();
     setLoggingout(true);
   }
+  //--------------------------------------
   return (
     <div className='user-dashboard'>
         <div className='header'>
-          
             <ProfileBg user={user}
             onUpdateUser={handleUpdateUser}
             />
-             
         </div>
         <div className='main-body'>
             <div className='sidebar'>
@@ -60,8 +101,9 @@ const handleUpdateUser = (updatedUser) =>{
                 <ul>
                     <li onClick={() => showElement('overview')}>Overview</li>
                     <li onClick={() => showElement('myProfile')}>My Profile</li>
-                    <li onClick={() => showElement('projects')}>Manage Projects</li>
-                    <li onClick={() => showElement('tasks')}>Manage Tasks</li>
+                    <li onClick={() => showElement('project-manager')}>Manage Projects</li>
+                    <li onClick={() => showElement('projects')}>Projects</li>
+                    <li onClick={() => showElement('tasks')}>Tasks</li>
                   
                     <li onClick={handleLogout}>Log out</li>
                 </ul>
@@ -97,8 +139,30 @@ const handleUpdateUser = (updatedUser) =>{
 
               </div>)}
 
+              { visElement === 'project-manager' && (<div id='project-manager'>
+                <ProjectList
+                projects={projects} 
+                addProject={addProject} 
+                updateProject={updateProject} 
+                deleteProject={deleteProject}
+                //addTask={addTask}
+                //updateTask={updateTask}
+                //deleteTask={deleteTask}
+            />
+              </div>)}
+
               { visElement === 'projects' && (<div id='projects'>
-                <ProjecManager/> 
+                <h1>Projects</h1>
+               
+                <ProjectListHolder
+                  projects={projects} 
+                />
+              
+              </div>)}
+
+              { visElement === 'tasks' && (<div id='tasks'>
+                <h1>Tasks</h1>
+             
               </div>)}
               
               
