@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import Task from "./Tasks";
 import {FaTrash, FaPlusCircle, FaEdit} from 'react-icons/fa';
+import MyTask from "./MyTask";
 
 export default function Project({project, updateProject, deleteProject, addTask, updateTask, deleteTask}){
 
@@ -14,6 +15,8 @@ export default function Project({project, updateProject, deleteProject, addTask,
             addTask(project.id, newTask);
             setNewTask('');
         }
+
+        
     }
     // btn- function
     const handleUpdateProject = () =>{
@@ -62,6 +65,7 @@ export default function Project({project, updateProject, deleteProject, addTask,
                         deleteTask={deleteTask}
                     />
                 ))}
+                
             </div>
         </div>
     );

@@ -5,6 +5,8 @@ export default function Task ({task, projectID, updateTask, deleteTask}){
     const[editTask, setEditTask] = useState(task.name);
     const[isEditingTask, setIsEditingTask] = useState(false);
     const [isCompletedTask, setIsCompletedTask] = useState(false);
+    const [completedTask, setCompletedTask] = useState(0);
+    const [totalTasks, setTotalTasks] = useState(0);
 
     const handleUpdateTask = () =>{
         updateTask(projectID, task.id, editTask);
@@ -14,8 +16,11 @@ export default function Task ({task, projectID, updateTask, deleteTask}){
     const completeTask = async (e) =>{
         e.preventDefault();
         setIsCompletedTask(true);
+        setCompletedTask(completedTask+1)
+
         if(isCompletedTask){
             setIsCompletedTask(false);
+            setCompletedTask(completedTask-1)
         }
     }
     

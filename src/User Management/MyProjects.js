@@ -4,7 +4,7 @@ function MyProjects({project}) {
  
   return (
     <div>
-        <li>{project.name} + Suca</li>
+        <h2>{project.name}</h2>
     </div>
    ) 
 }

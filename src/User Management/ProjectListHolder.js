@@ -1,10 +1,10 @@
-import React, {useState} from "react";
+import React from "react";
 import MyProjects from "./MyProjects";
 
 export default function ProjectListHolder({projects}){
    
     return(
-        <div className="Test">
+        <div>
             
             {projects.map(project => (
           <MyProjects
@@ -14,8 +14,6 @@ export default function ProjectListHolder({projects}){
           />
         ))}
         </div>
-
-        
 
     );
 }

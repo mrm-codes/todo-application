@@ -24,7 +24,7 @@ function Home() {
       </div>
 
       <div className='how-to'>
-        <h1> How it works?</h1>
+        <h1> How does it work?</h1>
         <h2>Follow These steps</h2>
         <ol>
           <li>Contact Us</li>

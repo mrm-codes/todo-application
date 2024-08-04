@@ -5,11 +5,17 @@ import ProjectList from './ProjectList';
 
 import ProfileBg from './ProfileBg';
 import ProfileForm from './ProfileForm';
-import TaskManager from './TaskManager';
-import MyProjects from './MyProjects';
-import Project from './Project';
-import Test from './ProjectListHolder';
+
+
 import ProjectListHolder from './ProjectListHolder';
+import TaskListHolder from './TaskListHolder';
+import ProjectManager from './ProjectManager';
+import MyTask from './MyTask';
+import Task from './Tasks';
+import TaskLists from './MyTask';
+
+
+
 
 
 
@@ -30,35 +36,53 @@ export default function UserDashboard() {
 const handleUpdateUser = (updatedUser) =>{
   setUser(updatedUser);
 }
-//----------------------------------------
+//--------------------------------------------------------------------------------------------------
 //POJECT MANAGER
 const [projects, setProjects] = useState([]);
+const [count, setCount] = useState(0);
+const [countTask, setCountTask] = useState(0);
+const [listItem, setListItem] = useState('');
+const [list, setList] = useState([]);
+const [tasks, setTasks] = useState([]);
 
 
 
 //Project action
 const addProject = (name, id) =>{
     setProjects([...projects, {id: Date.now(), name, tasks: []}]);
-    
-   
+    setCount(count+1);
+ 
 };
 
 const updateProject = (id, newName) =>{
     setProjects(projects.map(project => project.id === id ? {...project, name: newName}: project));
    
-    
 };
 
 const deleteProject = (id) =>{
-    setProjects(projects.filter(project => project.id !== id));
-   
+    setProjects(projects.filter(project => project.id !== id));  
+    setCount(count-1);
 };
-/*
+
 //Task actions
 const addTask = (projectID, taskName) =>{
     setProjects(projects.map(project => project.id === projectID ?
         {...project, tasks: [...project.tasks, {id: Date.now(), name: taskName}]}:project));
+        setCountTask(countTask+1);
+        setListItem(taskName);
+        setList([...list, {id: Date.now(), taskName}])
+        if(taskName.trim() !== ''){
+          setTasks([...tasks, taskName])
+        }
+        console.log(tasks)
+        
+        
+       
 };
+
+
+
+
 
 const updateTask = (projectID, taskID, newTask) =>{
     setProjects(projects.map(
@@ -70,9 +94,10 @@ const updateTask = (projectID, taskID, newTask) =>{
 
 const deleteTask = (projectID, taskID) =>{
     setProjects(projects.map(project => project.id === projectID ?
-    {...project, tasks: project.tasks.filter(task => task.id !== taskID)}: project))
+    {...project, tasks: project.tasks.filter(task => task.id !== taskID)}: project));
+    setCountTask(countTask-1);
 };
-*/
+
 // ---------------------------------------------
   //side bar navigation
   const [visElement, setVisElement] = useState('overview');
@@ -87,6 +112,12 @@ const deleteTask = (projectID, taskID) =>{
     e.preventDefault();
     setLoggingout(true);
   }
+  //----------------------------------------------
+ 
+   
+  
+  
+
   //--------------------------------------
   return (
     <div className='user-dashboard'>
@@ -115,15 +146,15 @@ const deleteTask = (projectID, taskID) =>{
                 <div className='overview-details'>
                 <div>
                   <h2>Number of Projects</h2>
-                  <p>02</p>
+                  <p>{count}</p>
                 </div>
                 <div>
                   <h2>Number of Assigned Tasks</h2>
-                  <p>04</p>
+                  <p>{countTask}</p>
                 </div>
                 <div>
                   <h2>Number of completed Tasks</h2>
-                  <p>06</p>
+                  <p>0</p>
                 </div>
                 <div>
                   <h2>Number of Overdue Tasks</h2>
@@ -145,24 +176,24 @@ const deleteTask = (projectID, taskID) =>{
                 addProject={addProject} 
                 updateProject={updateProject} 
                 deleteProject={deleteProject}
-                //addTask={addTask}
-                //updateTask={updateTask}
-                //deleteTask={deleteTask}
+                addTask={addTask}
+                updateTask={updateTask}
+                deleteTask={deleteTask}
             />
               </div>)}
 
               { visElement === 'projects' && (<div id='projects'>
                 <h1>Projects</h1>
                
-                <ProjectListHolder
-                  projects={projects} 
-                />
+             <ProjectListHolder
+                  projects={projects} />
+                
               
               </div>)}
 
               { visElement === 'tasks' && (<div id='tasks'>
                 <h1>Tasks</h1>
-             
+                {tasks.map((tasks, index) => (<p key={index}>{tasks}</p>))}
               </div>)}
               
               
