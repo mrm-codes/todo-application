@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/vivatech.com/Home/static/css/main.28dc04d1.css",
-    "main.js": "/vivatech.com/Home/static/js/main.ec791d4f.js",
-    "static/js/453.a53b11f0.chunk.js": "/vivatech.com/Home/static/js/453.a53b11f0.chunk.js",
-    "static/media/video.mp4": "/vivatech.com/Home/static/media/video.1d85d0a92fb847f2efaf.mp4",
-    "index.html": "/vivatech.com/Home/index.html",
-    "main.28dc04d1.css.map": "/vivatech.com/Home/static/css/main.28dc04d1.css.map",
-    "main.ec791d4f.js.map": "/vivatech.com/Home/static/js/main.ec791d4f.js.map",
-    "453.a53b11f0.chunk.js.map": "/vivatech.com/Home/static/js/453.a53b11f0.chunk.js.map"
+    "main.css": "/vivatech.com/static/css/main.28dc04d1.css",
+    "main.js": "/vivatech.com/static/js/main.23861471.js",
+    "static/js/453.a53b11f0.chunk.js": "/vivatech.com/static/js/453.a53b11f0.chunk.js",
+    "static/media/video.mp4": "/vivatech.com/static/media/video.1d85d0a92fb847f2efaf.mp4",
+    "index.html": "/vivatech.com/index.html",
+    "main.28dc04d1.css.map": "/vivatech.com/static/css/main.28dc04d1.css.map",
+    "main.23861471.js.map": "/vivatech.com/static/js/main.23861471.js.map",
+    "453.a53b11f0.chunk.js.map": "/vivatech.com/static/js/453.a53b11f0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.28dc04d1.css",
-    "static/js/main.ec791d4f.js"
+    "static/js/main.23861471.js"
   ]
 }
