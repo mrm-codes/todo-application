@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/vivatech.com/static/css/main.28dc04d1.css",
-    "main.js": "/vivatech.com/static/js/main.23861471.js",
+    "main.css": "/vivatech.com/static/css/main.4d172315.css",
+    "main.js": "/vivatech.com/static/js/main.ac1c07f3.js",
     "static/js/453.a53b11f0.chunk.js": "/vivatech.com/static/js/453.a53b11f0.chunk.js",
     "static/media/video.mp4": "/vivatech.com/static/media/video.1d85d0a92fb847f2efaf.mp4",
     "index.html": "/vivatech.com/index.html",
-    "main.28dc04d1.css.map": "/vivatech.com/static/css/main.28dc04d1.css.map",
-    "main.23861471.js.map": "/vivatech.com/static/js/main.23861471.js.map",
+    "main.4d172315.css.map": "/vivatech.com/static/css/main.4d172315.css.map",
+    "main.ac1c07f3.js.map": "/vivatech.com/static/js/main.ac1c07f3.js.map",
     "453.a53b11f0.chunk.js.map": "/vivatech.com/static/js/453.a53b11f0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.28dc04d1.css",
-    "static/js/main.23861471.js"
+    "static/css/main.4d172315.css",
+    "static/js/main.ac1c07f3.js"
   ]
 }
