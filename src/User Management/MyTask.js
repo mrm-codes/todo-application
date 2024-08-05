@@ -9,10 +9,11 @@ const MyTask = ({projects}) =>{
   console.log(list);
   return (
     <div>
-      {list.values((item, index) =>(
-        <p key={index}>{item}</p>
-      ))}
+      
+                
+              
     </div>
+     
   );
 
 }

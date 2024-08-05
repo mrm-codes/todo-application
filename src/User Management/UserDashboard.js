@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import img_sample from '../media/nobody.jpg';
 import ProjectList from './ProjectList';
@@ -14,13 +14,16 @@ import MyTask from './MyTask';
 import Task from './Tasks';
 import TaskLists from './MyTask';
 
+import './UserManagement.css';
+import './TaskManagement.css';
 
 
 
 
 
 
-export default function UserDashboard() {
+
+export default function UserDashboard({completeTasks}) {
   //User Profile 
 
   const [user, setUser] = useState({
@@ -41,10 +44,10 @@ const handleUpdateUser = (updatedUser) =>{
 const [projects, setProjects] = useState([]);
 const [count, setCount] = useState(0);
 const [countTask, setCountTask] = useState(0);
-const [listItem, setListItem] = useState('');
-const [list, setList] = useState([]);
-const [tasks, setTasks] = useState([]);
 
+const [list, setList] = useState([]);
+const [allTasks, setAllTasks] = useState([]);
+//-------------------------------------------------------------------------------------------------
 
 
 //Project action
@@ -69,18 +72,18 @@ const addTask = (projectID, taskName) =>{
     setProjects(projects.map(project => project.id === projectID ?
         {...project, tasks: [...project.tasks, {id: Date.now(), name: taskName}]}:project));
         setCountTask(countTask+1);
-        setListItem(taskName);
+      
         setList([...list, {id: Date.now(), taskName}])
         if(taskName.trim() !== ''){
-          setTasks([...tasks, taskName])
+          setAllTasks([...allTasks, taskName])
         }
-        console.log(tasks)
-        
-        
-       
+
+        console.log('list',list);
+        console.log('all tasks',allTasks);
+    
 };
 
-
+//Completed Tasks
 
 
 
@@ -99,12 +102,14 @@ const deleteTask = (projectID, taskID) =>{
 };
 
 // ---------------------------------------------
-  //side bar navigation
+  //side bar navigation and task navigation
   const [visElement, setVisElement] = useState('overview');
-  const showElement = (id) =>{
-    setVisElement(id);
-  }
+  const showElement = (id) =>{ setVisElement(id);}
 
+  //Task 
+  const [visTasks, setVisTasks] = useState('allTasks');
+  const showTasks = (id) =>{ setVisTasks(id); }
+  
   // logging out buttons
   const [loggingout, setLoggingout] =useState(false);
 
@@ -112,13 +117,7 @@ const deleteTask = (projectID, taskID) =>{
     e.preventDefault();
     setLoggingout(true);
   }
-  //----------------------------------------------
  
-   
-  
-  
-
-  //--------------------------------------
   return (
     <div className='user-dashboard'>
         <div className='header'>
@@ -184,7 +183,7 @@ const deleteTask = (projectID, taskID) =>{
 
               { visElement === 'projects' && (<div id='projects'>
                 <h1>Projects</h1>
-               
+                
              <ProjectListHolder
                   projects={projects} />
                 
@@ -192,8 +191,30 @@ const deleteTask = (projectID, taskID) =>{
               </div>)}
 
               { visElement === 'tasks' && (<div id='tasks'>
-                <h1>Tasks</h1>
-                {tasks.map((tasks, index) => (<p key={index}>{tasks}</p>))}
+                <div className='tabNavigation'>
+                  <button onClick={() => showTasks('allTasks')}>All Tasks</button>
+                  <button onClick={() => showTasks('completedTasks')}>Completed Tasks</button>
+                  <button onClick={() => showTasks('uncompletedTasks')}>Uncompleted Tasks</button>
+                </div> 
+
+                <div className='tabContent'>
+                  {visTasks === 'allTasks' && (<div id='allTasks'>
+                    <h2>All Tasks</h2>
+                    {allTasks.map((tasks, index) => (<p key={index}>{tasks}</p>))}
+                  </div>)}
+
+                  {visTasks === 'completedTasks' && (<div id='completedTasks'>
+                    <h2>Completed Tasks</h2>
+                  </div>)}
+
+                  {visTasks === 'uncompletedTasks' && (<div id='uncompletedTasks'>
+                    <h2>Uncompleted Tasks</h2>
+                  </div>)}
+
+                </div>
+              
+
+                               
               </div>)}
               
               

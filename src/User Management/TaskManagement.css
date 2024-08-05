@@ -98,6 +98,11 @@ padding: 0;
     
 }
 
+div h3 span{
+    color: #ff414d;
+    margin-right: 1.5rem;
+}
+
 .project-name h2{
     background: none;
     color: #ff414d;
@@ -147,3 +152,4 @@ div.btn button{
     font-size: 1rem;
     cursor: pointer;
 }
+#tasks{padding: 0; margin: 0; width: 100%;}

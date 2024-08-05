@@ -26,5 +26,15 @@ This is a web app that allows users to interactively manage their task, through 
 8. Update Task on Projects
 9. Logout
 
+## Used Techologies
+To build this React App, I used Technologies like a desktop computer with Windows OS, and Visual Studio Code for programming the application.
 
+This React application was built using softwares like html, css, js and React js.
+
+## Future improvements
+For the future we intend to add features like: 
+- Add or Backend the application for better data management;
+- Add an administrator to create users;
+- Add Nofifcations and correspondences (messages oor email);
+- Add Task time tracking, settong prioties and dues.
 

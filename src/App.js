@@ -6,7 +6,7 @@ import About from './Components/About';
 import Contact from './Components/Contact';
 import Register from './Components/Register';
 import Login from './Components/Login';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, Navigate } from 'react-router-dom';
 
 
 
@@ -16,7 +16,7 @@ export default function App(){
 
     <Router>
       <div className="navigation">
-                <div className="logo"><Link to='/'>Viva <span>Tech</span></Link></div>
+                <div className="logo"><Link to='/Home'>Viva <span>Tech</span></Link></div>
                 <div className="nav-items">
                     <ul>
                         <li><Link to="/">Home</Link></li>
@@ -28,7 +28,8 @@ export default function App(){
                 </div>
             </div>
             <Routes>
-                <Route path="/" element={<Home />} />
+                <Route path="/" element={<Navigate to="/Home" />} />
+                <Route path="/Home" element={<Home />} />
                 <Route path="/Register" element={<Register />} />
                 <Route path="/Login" element={<Login />} />
                 <Route path="/Contact" element={<Contact />} />

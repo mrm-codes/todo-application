@@ -8,6 +8,7 @@ export default function Project({project, updateProject, deleteProject, addTask,
     const [newTask, setNewTask] = useState('');
     const [editProject, setEditProject] = useState(project.name);
     const [isEditing, setIsEditing] = useState(false);
+    
 
     //Adding Task in the project -btn
     const handleAddTask = () =>{
@@ -15,6 +16,7 @@ export default function Project({project, updateProject, deleteProject, addTask,
             addTask(project.id, newTask);
             setNewTask('');
         }
+        console.log('NewTask', newTask)
 
         
     }

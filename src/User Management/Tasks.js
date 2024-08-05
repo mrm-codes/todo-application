@@ -1,27 +1,32 @@
 import React, {useState} from "react";
-import {FaTrash, FaRegCircle, FaEdit} from 'react-icons/fa';
+import {FaTrash, FaRegCircle, FaEdit, FaCheckCircle, FaTimesCircle} from 'react-icons/fa';
 
-export default function Task ({task, projectID, updateTask, deleteTask}){
+export default function Task ({task, projectID, addTask, updateTask, deleteTask}){
     const[editTask, setEditTask] = useState(task.name);
     const[isEditingTask, setIsEditingTask] = useState(false);
     const [isCompletedTask, setIsCompletedTask] = useState(false);
-    const [completedTask, setCompletedTask] = useState(0);
-    const [totalTasks, setTotalTasks] = useState(0);
+   //---------------------
+   const [completedTaskList, setCompletedTaskList] = useState([]);
+   const [completed, setCompleted] = useState([]);
+   const [uncompletedTask, setUncompletedTask] = useState([]);
+    
 
     const handleUpdateTask = () =>{
         updateTask(projectID, task.id, editTask);
         setIsEditingTask(false);
     }
 
-    const completeTask = async (e) =>{
+    const CompletedTasks = async (e) =>{
         e.preventDefault();
-        setIsCompletedTask(true);
-        setCompletedTask(completedTask+1)
+        
+        
+        console.log('completed list', completed)
+      
+    }
 
-        if(isCompletedTask){
-            setIsCompletedTask(false);
-            setCompletedTask(completedTask-1)
-        }
+    const UncompletedTasks= (e) =>{
+        e.preventDefault();
+        console.log('uncompleted')
     }
     
     return (
@@ -40,11 +45,25 @@ export default function Task ({task, projectID, updateTask, deleteTask}){
                 <li className={isCompletedTask ? "completed": "not-completed"}><FaRegCircle/> {task.name}</li>
                     <div className="btn">
                         <button 
-                        id={!isCompletedTask ? "completed-btn" : "not-completed-btn"}
-                        
-                        onClick={completeTask}>{!isCompletedTask ?("Complete Task") : ("Uncomplete Task")}</button>
-                        <button onClick={() => setIsEditingTask(!isEditingTask)}><FaEdit/> Task</button>
-                        <button onClick={() => deleteTask(projectID, task.id)}><FaTrash/> Task</button>
+                            id="completed-btn"           
+                            onClick={CompletedTasks}>           <FaCheckCircle/> Task
+                        </button>
+
+                        <button
+                            id="uncompleted-btn"
+                            onClick={UncompletedTasks}>
+                           <FaTimesCircle/> Tasks
+                        </button>
+
+                        <button 
+                            onClick={() => setIsEditingTask(!isEditingTask)}>
+                            <FaEdit/> Task
+                        </button>
+
+                        <button 
+                            onClick={() => deleteTask(projectID, task.id)}>
+                            <FaTrash/> Task
+                        </button>
                     </div>
                 </div>
             )}
