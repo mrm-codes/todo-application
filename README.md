@@ -16,10 +16,10 @@ This is a web app that allows users to interactively manage their task, through 
 - As a client, I want to be able to share my task list and request suggestions before updating it, in order to be efficient with task implementation.
 
 ## How to Use?
-1. Go to the webpage:
+1. Go to the webpage: https://mrm-codes.github.io/vivatech.com/
 2. Contact us or Register an account;
 3. Login
-4. Start a Project
+4. Start a Project (or Tasks' title)
 5. Add Task to a Project
 6. Start a Task
 7. End Task
